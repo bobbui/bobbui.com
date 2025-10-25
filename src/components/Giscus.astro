@@ -1,0 +1,46 @@
+---
+interface Props {
+  repo?: string;
+  repoId?: string;
+  category?: string;
+  categoryId?: string;
+  mapping?: string;
+  theme?: string;
+}
+
+const {
+  repo = "bobbui/bobbui.com",
+  repoId = "",
+  category = "General",
+  categoryId = "",
+  mapping = "pathname",
+  theme = "preferred_color_scheme"
+} = Astro.props;
+---
+
+<div class="giscus-container">
+  <script 
+    is:inline
+    src="https://giscus.app/client.js"
+    data-repo={repo}
+    data-repo-id={repoId}
+    data-category={category}
+    data-category-id={categoryId}
+    data-mapping={mapping}
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme={theme}
+    data-lang="en"
+    crossorigin="anonymous"
+    async>
+  </script>
+</div>
+
+<style>
+  .giscus-container {
+    margin-top: 2rem;
+    padding: 1rem 0;
+  }
+</style>

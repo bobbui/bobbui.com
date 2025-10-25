@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Giscus from '../components/Giscus.astro';
+import Turnstile from '../components/Turnstile.astro';
+---
+
+<BaseLayout title="Welcome to bobbui.com">
+  <main>
+    <div class="container">
+      <h1>🚀 Welcome to bobbui.com</h1>
+      <p>My personal website &amp; blog | Writing about tech mainly AI | Where I share ideas, projects, and learnings</p>
+      
+      <section class="content">
+        <h2>About This Site</h2>
+        <p>This site is built with:</p>
+        <ul>
+          <li>⚡ Astro - Fast static site generator</li>
+          <li>☁️ Cloudflare Pages - Deployment platform</li>
+          <li>💬 Giscus - GitHub Discussions powered comments</li>
+          <li>🔒 Cloudflare Turnstile - Bot protection</li>
+        </ul>
+
+        <h2>Image Example</h2>
+        <p>Images are served from the static directory:</p>
+        <!-- Example: <img src="/static/example.jpg" alt="Example" /> -->
+      </section>
+
+      <section class="demo-section">
+        <h2>Cloudflare Turnstile Demo</h2>
+        <p>This is a demo of Cloudflare Turnstile for bot protection:</p>
+        <Turnstile />
+      </section>
+
+      <section class="comments-section">
+        <h2>Comments</h2>
+        <p>Leave a comment below using GitHub Discussions:</p>
+        <Giscus />
+      </section>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  :root {
+    --color-primary: #4f46e5;
+    --color-bg: #ffffff;
+    --color-text: #1f2937;
+    --color-border: #e5e7eb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-bg: #1f2937;
+      --color-text: #f9fafb;
+      --color-border: #374151;
+    }
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+  }
+
+  main {
+    padding: 2rem 1rem;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+  }
+
+  h2 {
+    font-size: 1.75rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+
+  section {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+  }
+
+  .content {
+    background-color: var(--color-bg);
+  }
+
+  .demo-section,
+  .comments-section {
+    margin-top: 2rem;
+  }
+</style>

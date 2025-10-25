@@ -1,0 +1,24 @@
+{
+  "name": "bobbui.com",
+  "version": "1.0.0",
+  "description": "✨ My personal website &amp; blog | Writing about tech mainly AI | 🚀 Where I share ideas, projects, and learnings",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@astrojs/cloudflare": "^12.6.10",
+    "astro": "^5.15.1"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.5",
+    "typescript": "^5.9.3"
+  }
+}
