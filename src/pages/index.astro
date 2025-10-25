@@ -20,6 +20,12 @@ import Turnstile from '../components/Turnstile.astro';
           <li>🔒 Cloudflare Turnstile - Bot protection</li>
         </ul>
 
+        <h2>Blog</h2>
+        <p>Check out my blog posts:</p>
+        <ul>
+          <li><a href="/blog/first-post">🎉 Welcome to My First Blog Post</a></li>
+        </ul>
+
         <h2>Image Example</h2>
         <p>Images are served from the static directory:</p>
         <!-- Example: <img src="/static/example.jpg" alt="Example" /> -->
@@ -101,6 +107,15 @@ import Turnstile from '../components/Turnstile.astro';
 
   li {
     margin-bottom: 0.5rem;
+  }
+
+  a {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
   }
 
   section {

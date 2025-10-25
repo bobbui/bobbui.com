@@ -1,0 +1,171 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Giscus from '../../components/Giscus.astro';
+---
+
+<BaseLayout title="My First Blog Post" description="An example blog post about getting started">
+  <main>
+    <div class="container">
+      <article class="blog-post">
+        <header>
+          <h1>🎉 Welcome to My First Blog Post</h1>
+          <time datetime="2025-10-25">October 25, 2025</time>
+        </header>
+        
+        <div class="content">
+          <p>This is an example blog post demonstrating how easy it is to add content to this Astro-powered site.</p>
+          
+          <h2>About Astro</h2>
+          <p>Astro is a modern static site generator that allows you to build fast, content-focused websites.</p>
+          
+          <h2>Adding Images</h2>
+          <p>You can add images from the static directory:</p>
+          <div class="image-example">
+            <code>&lt;img src="/static/my-image.jpg" alt="Description" /&gt;</code>
+          </div>
+          
+          <h2>Key Features</h2>
+          <ul>
+            <li>Zero JavaScript by default</li>
+            <li>Component islands architecture</li>
+            <li>Bring your own framework (React, Vue, Svelte)</li>
+            <li>Built-in optimizations</li>
+          </ul>
+        </div>
+      </article>
+
+      <section class="comments">
+        <h2>Comments</h2>
+        <Giscus />
+      </section>
+
+      <nav class="post-nav">
+        <a href="/">&larr; Back to Home</a>
+      </nav>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  :root {
+    --color-primary: #4f46e5;
+    --color-bg: #ffffff;
+    --color-text: #1f2937;
+    --color-border: #e5e7eb;
+    --color-code-bg: #f3f4f6;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-bg: #1f2937;
+      --color-text: #f9fafb;
+      --color-border: #374151;
+      --color-code-bg: #374151;
+    }
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+  }
+
+  main {
+    padding: 2rem 1rem;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .blog-post {
+    margin-bottom: 3rem;
+  }
+
+  header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--color-border);
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+  }
+
+  time {
+    color: #6b7280;
+    font-size: 0.9rem;
+  }
+
+  .content {
+    font-size: 1.1rem;
+  }
+
+  .content h2 {
+    font-size: 1.75rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .content p {
+    margin-bottom: 1rem;
+  }
+
+  .content ul {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .content li {
+    margin-bottom: 0.5rem;
+  }
+
+  .image-example {
+    background-color: var(--color-code-bg);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+  }
+
+  code {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+  }
+
+  .comments {
+    margin: 3rem 0;
+    padding: 2rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+  }
+
+  .comments h2 {
+    margin-bottom: 1rem;
+  }
+
+  .post-nav {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .post-nav a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .post-nav a:hover {
+    text-decoration: underline;
+  }
+</style>
