@@ -52,6 +52,7 @@ cp .env.example .env
 Then update the values in `.env`:
 
 - **Giscus Settings**: Get from https://giscus.app/
+  - `PUBLIC_GISCUS_ENABLED` - Set to `true` after Giscus is fully configured
   - `PUBLIC_GISCUS_REPO` - Your GitHub repository
   - `PUBLIC_GISCUS_REPO_ID` - Repository ID
   - `PUBLIC_GISCUS_CATEGORY` - Discussion category
@@ -77,6 +78,7 @@ Configure the following secrets in your GitHub repository settings:
 2. Install the Giscus app: https://github.com/apps/giscus
 3. Visit https://giscus.app/ to generate your configuration
 4. Add the configuration values to your `.env` file
+5. Set `PUBLIC_GISCUS_ENABLED=true` once everything is configured
 
 ### Setup Cloudflare Turnstile
 

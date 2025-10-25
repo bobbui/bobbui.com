@@ -6,41 +6,59 @@ interface Props {
   categoryId?: string;
   mapping?: string;
   theme?: string;
+  enabled?: boolean;
 }
 
 const {
-  repo = import.meta.env.PUBLIC_GISCUS_REPO || "bobbui/bobbui.com",
+  repo = import.meta.env.PUBLIC_GISCUS_REPO || "",
   repoId = import.meta.env.PUBLIC_GISCUS_REPO_ID || "",
-  category = import.meta.env.PUBLIC_GISCUS_CATEGORY || "General",
+  category = import.meta.env.PUBLIC_GISCUS_CATEGORY || "",
   categoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID || "",
   mapping = "pathname",
-  theme = "preferred_color_scheme"
+  theme = "preferred_color_scheme",
+  enabled = import.meta.env.PUBLIC_GISCUS_ENABLED === "true"
 } = Astro.props;
+
+const hasRequiredConfig = Boolean(repo && repoId && category && categoryId);
+const shouldRender = enabled && hasRequiredConfig;
 ---
 
 <div class="giscus-container">
-  <script 
-    is:inline
-    src="https://giscus.app/client.js"
-    data-repo={repo}
-    data-repo-id={repoId}
-    data-category={category}
-    data-category-id={categoryId}
-    data-mapping={mapping}
-    data-strict="0"
-    data-reactions-enabled="1"
-    data-emit-metadata="0"
-    data-input-position="bottom"
-    data-theme={theme}
-    data-lang="en"
-    crossorigin="anonymous"
-    async>
-  </script>
+  {shouldRender ? (
+    <script
+      is:inline
+      src="https://giscus.app/client.js"
+      data-repo={repo}
+      data-repo-id={repoId}
+      data-category={category}
+      data-category-id={categoryId}
+      data-mapping={mapping}
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="bottom"
+      data-theme={theme}
+      data-lang="en"
+      crossorigin="anonymous"
+      async>
+    </script>
+  ) : (
+    <p class="giscus-disabled">
+      Comments are currently disabled. Configure the required Giscus environment
+      variables and set <code>PUBLIC_GISCUS_ENABLED</code> to <code>true</code> to
+      enable them.
+    </p>
+  )}
 </div>
 
 <style>
   .giscus-container {
     margin-top: 2rem;
     padding: 1rem 0;
+  }
+
+  .giscus-disabled {
+    font-size: 0.9rem;
+    color: var(--color-text-muted, #666);
   }
 </style>
