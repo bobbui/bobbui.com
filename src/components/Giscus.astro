@@ -9,10 +9,10 @@ interface Props {
 }
 
 const {
-  repo = "bobbui/bobbui.com",
-  repoId = "",
-  category = "General",
-  categoryId = "",
+  repo = import.meta.env.PUBLIC_GISCUS_REPO || "bobbui/bobbui.com",
+  repoId = import.meta.env.PUBLIC_GISCUS_REPO_ID || "",
+  category = import.meta.env.PUBLIC_GISCUS_CATEGORY || "General",
+  categoryId = import.meta.env.PUBLIC_GISCUS_CATEGORY_ID || "",
   mapping = "pathname",
   theme = "preferred_color_scheme"
 } = Astro.props;

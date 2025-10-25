@@ -7,7 +7,7 @@ interface Props {
 }
 
 const {
-  siteKey = "1x00000000000000000000AA",
+  siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || "1x00000000000000000000AA",
   action = "",
   theme = "auto",
   size = "normal"

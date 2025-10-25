@@ -41,6 +41,25 @@ npm run build
 npm run preview
 ```
 
+## Configuration
+
+Copy `.env.example` to `.env` and configure your settings:
+
+```bash
+cp .env.example .env
+```
+
+Then update the values in `.env`:
+
+- **Giscus Settings**: Get from https://giscus.app/
+  - `PUBLIC_GISCUS_REPO` - Your GitHub repository
+  - `PUBLIC_GISCUS_REPO_ID` - Repository ID
+  - `PUBLIC_GISCUS_CATEGORY` - Discussion category
+  - `PUBLIC_GISCUS_CATEGORY_ID` - Category ID
+
+- **Turnstile Settings**: Get from [Cloudflare Dashboard](https://dash.cloudflare.com/?to=/:account/turnstile)
+  - `PUBLIC_TURNSTILE_SITE_KEY` - Your Turnstile site key
+
 ## Deployment
 
 This site is automatically deployed to Cloudflare Pages via GitHub Actions when changes are pushed to the `main` branch.
@@ -57,16 +76,12 @@ Configure the following secrets in your GitHub repository settings:
 1. Enable GitHub Discussions in your repository
 2. Install the Giscus app: https://github.com/apps/giscus
 3. Visit https://giscus.app/ to generate your configuration
-4. Update the Giscus component in `src/components/Giscus.astro` with your:
-   - Repository name
-   - Repository ID
-   - Category
-   - Category ID
+4. Add the configuration values to your `.env` file
 
 ### Setup Cloudflare Turnstile
 
 1. Get your Turnstile site key from [Cloudflare Dashboard](https://dash.cloudflare.com/?to=/:account/turnstile)
-2. Update the `siteKey` prop in `src/components/Turnstile.astro`
+2. Add the site key to your `.env` file
 
 ## Project Structure
 
