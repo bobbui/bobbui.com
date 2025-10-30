@@ -5,59 +5,98 @@ import Content from '~/components/widgets/Content.astro';
 import Steps from '~/components/widgets/Steps.astro';
 
 const metadata = {
-  title: 'Sarah Johnson - About & Resume',
+  title: 'Bob Bui - About & Resume',
 };
 ---
 
 <Layout metadata={metadata}>
+  <!-- <Hero id="hero" title="My journey">
+    <Fragment slot="subtitle" class:list={''}>
+      I architect scalable systems and lead teams that ship. 15 years from IC to Manager/Architect building resilient,
+      high-impact AI products that perform in production.
+    </Fragment>
+  </Hero> -->
+
   <Content
     id="about"
     columns={3}
+    classes={{ container: 'about-section' }}
     items={[
-      {
-        icon: 'tabler:brand-dribbble',
-        callToAction: {
-          target: '_blank',
-          text: 'Dribbble',
-          href: '#',
-        },
-      },
-      {
-        icon: 'tabler:brand-behance',
-        callToAction: {
-          target: '_blank',
-          text: 'Behance',
-          href: '#',
-        },
-      },
-      {
-        icon: 'tabler:brand-pinterest',
-        callToAction: {
-          target: '_blank',
-          text: 'Pinterest',
-          href: '#',
-        },
-      },
+      // {
+      //   icon: 'tabler:brand-dribbble',
+      //   callToAction: {
+      //     target: '_blank',
+      //     text: 'Dribbble',
+      //     href: '#',
+      //   },
+      // },
+      // {
+      //   icon: 'tabler:brand-behance',
+      //   callToAction: {
+      //     target: '_blank',
+      //     text: 'Behance',
+      //     href: '#',
+      //   },
+      // },
+      // {
+      //   icon: 'tabler:brand-pinterest',
+      //   callToAction: {
+      //     target: '_blank',
+      //     text: 'Pinterest',
+      //     href: '#',
+      //   },
+      // },
     ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1491349174775-aaafddd81942?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-      alt: 'Colorful Image',
-      loading: 'eager',
-    }}
   >
     <Fragment slot="content">
       <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h2>
-      <p>
-        Welcome to my creative journey. My work is a testament to my commitment to bringing ideas to life, where each
-        pixel becomes a brushstroke in the canvas of imagination.
-      </p>
-      <br />
-      <p>
-        I find inspiration in the world around me, whether through the pages of a captivating novel, the intricate
-        details of typography, or the vibrant hues of nature during my outdoor escapades.
-      </p>
-      <br />
-      <p>If you're curious to dive deeper into my work, you can follow me:</p>
+      <div class="text-base">
+        <p>
+          I didn't grow up with much. My father passed away when I was young, and a computer wasn't in the picture. The
+          first time I touched one was 2004. I felt late on day one.
+        </p>
+
+        <p>
+          In college I struggled. My classmates had years of practice; I was still finding the shortcuts. I stayed after
+          hours, asked "basic" questions, and rewrote the same assignments until they ran. By graduation my thesis
+          ranked at the top—less talent, more persistence.
+        </p>
+
+        <p>
+          Early career looked similar. I took the unglamorous tickets, fixed things at odd hours, and learned how real
+          systems fail. I moved from IC to lead to architect, but I still try to be the person who rolls up sleeves
+          first and argues about tools later.
+        </p>
+
+        <div class="mt-6 space-y-3">
+          <h3 class="text-xl font-semibold text-slate-900 dark:text-white">A few wins I'm proud of</h3>
+          <ul class="list-disc list-inside space-y-1 text-muted dark:text-slate-300">
+            <li>Helped rescue a late rebuild and get it live. Faster pages, smaller bills, happier users.</li>
+            <li>Worked with data science to move models from notebooks to production—less demo, more uptime.</li>
+            <li>Built pipelines so people didn't have to copy-paste from a thousand PDFs. Small fixes, real impact.</li>
+          </ul>
+        </div>
+
+        <div class="mt-6 space-y-3">
+          <h3 class="text-xl font-semibold text-slate-900 dark:text-white">What guides me now</h3>
+          <ul class="list-disc list-inside space-y-1 text-muted dark:text-slate-300">
+            <li>Ground answers in facts. If it isn't anchored, it's guesswork.</li>
+            <li>Be honest about trade-offs: latency, cost, quality. Measure and decide on purpose.</li>
+            <li>Good tooling beats heroics. Onboarding should take hours, not weeks.</li>
+            <li>Leaders should still read code and remember where it breaks.</li>
+          </ul>
+        </div>
+
+        <p>
+          I'm building an AI product on the side. Nothing flashy—useful. It's for messy data, real questions, and
+          answers you can trust with citations and speed. Nights and weekends are enough when the problem matters.
+        </p>
+
+        <p>
+          If parts of this feel familiar—late start, steep learning, shipping anyway—follow along. I'll share what
+          works, what doesn't, and everything in between.
+        </p>
+      </div>
     </Fragment>
 
     <Fragment slot="bg">
@@ -65,7 +104,7 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <Steps
+  <!-- <Steps
     id="resume"
     title="Work experience"
     items={[
@@ -99,5 +138,16 @@ const metadata = {
       },
     ]}
     classes={{ container: 'max-w-3xl' }}
-  />
+  /> -->
 </Layout>
+
+<style is:global>
+  .about-section .md\:flex {
+    flex-wrap: wrap;
+  }
+
+  .about-section .md\:basis-1\/2 {
+    flex-basis: 100%;
+    max-width: 80%;
+  }
+</style>
