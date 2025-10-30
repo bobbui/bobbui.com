@@ -20,7 +20,7 @@ const metadata = {
   <Content
     id="about"
     columns={3}
-    classes={{ container: 'about-section' }}
+    classes={{ container: 'about-section compact-padding' }}
     items={[
       // {
       //   icon: 'tabler:brand-dribbble',
@@ -49,62 +49,56 @@ const metadata = {
     ]}
   >
     <Fragment slot="content">
-      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h2>
       <div class="text-base">
+        <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">My journey</h2>
+        <br />
         <p>
-          I didn't grow up with much. My father passed away when I was young, and a computer wasn't in the picture. The
-          first time I touched one was 2004. I felt late on day one.
+          I didn’t grow up around computers. My dad passed when I was young. We had no internet, no machine in the
+          house, no “early hacker” origin story.
+          <br />
+          My first login was in 2004 at a internet cafe where the fans were louder than my typing.
         </p>
-
+        <br />
         <p>
-          In college I struggled. My classmates had years of practice; I was still finding the shortcuts. I stayed after
-          hours, asked "basic" questions, and rewrote the same assignments until they ran. By graduation my thesis
-          ranked at the top—less talent, more persistence.
+          I still applied to the top three CS programs in Vietnam. I got in. Then I promptly struggled. I couldn’t
+          touch-type. I bombed my first data-structures course lab test even though I aced on the theory part.I spent
+          nights re-learning the basics: pointer diagrams on scrap paper, debugging by printing to stdout because that’s
+          all I knew. Progress looked like this: fewer red errors, more green runs, and a keyboard that finally kept up
+          with my brain.
         </p>
-
+        <br />
         <p>
-          Early career looked similar. I took the unglamorous tickets, fixed things at odd hours, and learned how real
-          systems fail. I moved from IC to lead to architect, but I still try to be the person who rolls up sleeves
-          first and argues about tools later.
+          That grind became a habit. Ship before “ready.” Learn by fixing what I just broke. Small wins compounded into
+          bigger ones.
         </p>
-
-        <div class="mt-6 space-y-3">
-          <h3 class="text-xl font-semibold text-slate-900 dark:text-white">A few wins I'm proud of</h3>
-          <ul class="list-disc list-inside space-y-1 text-muted dark:text-slate-300">
-            <li>Helped rescue a late rebuild and get it live. Faster pages, smaller bills, happier users.</li>
-            <li>Worked with data science to move models from notebooks to production—less demo, more uptime.</li>
-            <li>Built pipelines so people didn't have to copy-paste from a thousand PDFs. Small fixes, real impact.</li>
-          </ul>
-        </div>
-
-        <div class="mt-6 space-y-3">
-          <h3 class="text-xl font-semibold text-slate-900 dark:text-white">What guides me now</h3>
-          <ul class="list-disc list-inside space-y-1 text-muted dark:text-slate-300">
-            <li>Ground answers in facts. If it isn't anchored, it's guesswork.</li>
-            <li>Be honest about trade-offs: latency, cost, quality. Measure and decide on purpose.</li>
-            <li>Good tooling beats heroics. Onboarding should take hours, not weeks.</li>
-            <li>Leaders should still read code and remember where it breaks.</li>
-          </ul>
-        </div>
+        <br />
+        <p>
+          Since then I’ve built and led systems used at scale across the U.S., Singapore, Canada, and Europe. Cut
+          latency by double digits. Rebuilt legacy platforms that now serve billions of requests. Took research models
+          to production. Titles didn’t do that—shipping did.
+        </p>
+        <br />
 
         <p>
-          I'm building an AI product on the side. Nothing flashy—useful. It's for messy data, real questions, and
-          answers you can trust with citations and speed. Nights and weekends are enough when the problem matters.
+          Now I’m building an AI product on the side for builders like you: multi-model answers with receipts, retrieval
+          that respects data, speed you can feel, costs you can forecast.
         </p>
-
+        <br />
         <p>
-          If parts of this feel familiar—late start, steep learning, shipping anyway—follow along. I'll share what
-          works, what doesn't, and everything in between.
+          If that’s your lane—developer, indie maker, analyst, operator—follow along. I share the messy parts, the
+          numbers, and the fixes that stick.
         </p>
+        <br />
       </div>
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Content>
 
-  <!-- <Steps
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Layout>
+
+<!-- <Steps
     id="resume"
     title="Work experience"
     items={[
@@ -139,7 +133,6 @@ const metadata = {
     ]}
     classes={{ container: 'max-w-3xl' }}
   /> -->
-</Layout>
 
 <style is:global>
   .about-section .md\:flex {
@@ -148,6 +141,28 @@ const metadata = {
 
   .about-section .md\:basis-1\/2 {
     flex-basis: 100%;
-    max-width: 80%;
+    max-width: 100%;
+  }
+
+  .about-section .text-base {
+    max-width: 62ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .compact-padding.py-12 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  @media (min-width: 768px) {
+    .about-section .text-base {
+      max-width: 65ch;
+    }
+
+    .compact-padding .md\:py-16 {
+      padding-top: 2.5rem !important;
+      padding-bottom: 2.5rem !important;
+    }
   }
 </style>
