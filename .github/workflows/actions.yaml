@@ -10,21 +10,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  check:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Use Node.js 20
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
-      - run: npm ci
-      - run: npm run check
-
-  build-and-deploy:
-    needs: check
-    if: github.event_name != 'pull_request'
+  ci:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -35,9 +21,13 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
+      - name: Run checks
+        run: npm run check
       - name: Build
+        if: github.event_name != 'pull_request'
         run: npm run build
       - name: Deploy with Wrangler
+        if: github.event_name != 'pull_request'
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
