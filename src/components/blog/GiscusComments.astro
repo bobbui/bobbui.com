@@ -1,0 +1,58 @@
+---
+import { APP_BLOG } from 'astrowind:config';
+
+const comments = APP_BLOG?.comments;
+const isEnabled = Boolean(comments?.isEnabled) && (comments?.provider ?? 'giscus') === 'giscus';
+const giscus = comments?.giscus ?? {};
+
+const requiredFields = ['repo', 'repoId', 'category', 'categoryId'] as const;
+const missingFields = requiredFields.filter((key) => !(typeof giscus[key] === 'string' && giscus[key]?.length));
+const hasAllRequiredFields = missingFields.length === 0;
+
+if (!isEnabled) {
+  return;
+}
+
+if (!hasAllRequiredFields) {
+  console.warn(
+    '[Giscus] Comments are enabled but missing required configuration fields:',
+    missingFields.join(', ')
+  );
+  return;
+}
+
+const mapping = giscus.mapping ?? 'pathname';
+const reactionsEnabled = giscus.reactionsEnabled === false ? '0' : '1';
+const emitMetadata = giscus.emitMetadata === true ? '1' : '0';
+const inputPosition = giscus.inputPosition ?? 'bottom';
+const theme = giscus.theme ?? 'preferred_color_scheme';
+const lang = giscus.lang ?? 'en';
+const loading = giscus.loading ?? 'lazy';
+const strict = giscus.strict ?? '0';
+const host = giscus.host ?? 'https://giscus.app';
+---
+
+<section class="mt-12 px-6 sm:px-6">
+  <div class="mx-auto max-w-3xl rounded-2xl border border-slate-200/40 bg-white/80 px-4 py-6 shadow-sm dark:border-slate-700/40 dark:bg-slate-900/40">
+    <script
+      src={`${host.replace(/\/$/, '')}/client.js`}
+      data-repo={giscus.repo}
+      data-repo-id={giscus.repoId}
+      data-category={giscus.category}
+      data-category-id={giscus.categoryId}
+      data-mapping={mapping}
+      data-strict={strict}
+      data-reactions-enabled={reactionsEnabled}
+      data-emit-metadata={emitMetadata}
+      data-input-position={inputPosition}
+      data-theme={theme}
+      data-lang={lang}
+      data-loading={loading}
+      crossorigin="anonymous"
+      async
+    ></script>
+    <noscript class="text-sm text-muted dark:text-slate-400">
+      Comments are powered by Giscus. Enable JavaScript to view them.
+    </noscript>
+  </div>
+</section>
