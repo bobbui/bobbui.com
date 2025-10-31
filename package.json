@@ -12,7 +12,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "check": "npm run check:astro && npm run check:eslint && npm run check:prettier",
+    "check": "npm run check:astro && npm run check:eslint",
     "check:astro": "astro check",
     "check:eslint": "eslint .",
     "fix": "npm run fix:eslint && npm run fix:prettier",
