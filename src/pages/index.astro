@@ -1,0 +1,147 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Hero from '~/components/widgets/Hero.astro';
+
+const metadata = {
+  title: 'Homepage',
+};
+---
+
+<Layout metadata={metadata}>
+  <Fragment slot="announcement"></Fragment>
+
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero id="hero" title="Bob Bui" tagline="Software Engineer • Aspiring Tech Entrepreneur">
+    <Fragment slot="subtitle">
+      I build scalable systems and lead teams that ship. 15 years from IC to architect, turning AI into reliable
+      products. Now building a side AI product. Read my blog for the hard-won lessons.
+    </Fragment>
+  </Hero>
+  <Content
+    id="about"
+    columns={3}
+    classes={{ container: 'compact-padding' }}
+    items={[
+      //   {
+      //     icon: 'tabler:brand-dribbble',
+      //     callToAction: {
+      //       target: '_blank',
+      //       text: 'Dribbble',
+      //       href: '#',
+      //     },
+      //   },
+      //   {
+      //     icon: 'tabler:brand-behance',
+      //     callToAction: {
+      //       target: '_blank',
+      //       text: 'Behance',
+      //       href: '#',
+      //     },
+      //   },
+      //   {
+      //     icon: 'tabler:brand-pinterest',
+      //     callToAction: {
+      //       target: '_blank',
+      //       text: 'Pinterest',
+      //       href: '#',
+      //     },
+      //   },
+    ]}
+    image={{
+      src: '~/assets/images/profile-pic.png',
+      alt: "Bob Bui's portrait image",
+      loading: 'eager',
+    }}
+  >
+    <Fragment slot="content">
+      <!-- <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h2> -->
+      <p>
+        <b>Recent work:</b> Architected and led cross-functional team to deploy enterprise GenAI assistant, enabling 20,000+
+        employees to increase productivity through AI-powered workflows and knowledge access.
+      </p>
+      <br />
+      <p>
+        <b>Focus areas:</b> Large-scale distributed cloud system, data analytics, AI/ML, cutting-edge GenAI technologies
+      </p>
+      <br />
+      <p>
+        <b> Entrepreneur-in-progress:</b> I prototype on weekends, ship tiny bets, measure truth, and share what works. The
+        goal: useful AI that saves minutes every day without drama.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+  <CallToAction
+    title="Let's work together"
+    subtitle="Build, measure, and scale AI systems without blowing up cost or latency?"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Contact me',
+        href: 'mailto:bob.bui@outlook.com',
+        'data-obfuscation': '1',
+      },
+    ]}
+    classes={{ container: 'cta-compact' }}
+  />
+</Layout>
+<style is:global>
+  #hero .py-12 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  #hero .md\:py-20 {
+    padding-top: 1.25rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+
+  #hero .pb-10 {
+    padding-bottom: 1rem !important;
+  }
+
+  #hero .md\:pb-16 {
+    padding-bottom: 1.25rem !important;
+  }
+
+  #hero .text-xl.mb-6 {
+    margin-bottom: 1rem !important;
+  }
+
+  .compact-padding.py-12 {
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+  }
+
+  .compact-padding .max-w-4xl {
+    max-width: min(70vw, 260px);
+  }
+
+  .compact-padding .mx-auto.w-full {
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .compact-padding .md\:py-16 {
+      padding-top: 1rem !important;
+      padding-bottom: 1rem !important;
+    }
+  }
+
+  .cta-compact.py-12 {
+    padding-top: 0.5rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  .cta-compact .md\:py-16 {
+    padding-top: 0.75rem !important;
+    padding-bottom: 1.25rem !important;
+  }
+</style>

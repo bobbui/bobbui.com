@@ -1,0 +1,168 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Content from '~/components/widgets/Content.astro';
+import Steps from '~/components/widgets/Steps.astro';
+
+const metadata = {
+  title: 'Bob Bui - About & Resume',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- <Hero id="hero" title="My journey">
+    <Fragment slot="subtitle" class:list={''}>
+      I architect scalable systems and lead teams that ship. 15 years from IC to Manager/Architect building resilient,
+      high-impact AI products that perform in production.
+    </Fragment>
+  </Hero> -->
+
+  <Content
+    id="about"
+    columns={3}
+    classes={{ container: 'about-section compact-padding' }}
+    items={[
+      // {
+      //   icon: 'tabler:brand-dribbble',
+      //   callToAction: {
+      //     target: '_blank',
+      //     text: 'Dribbble',
+      //     href: '#',
+      //   },
+      // },
+      // {
+      //   icon: 'tabler:brand-behance',
+      //   callToAction: {
+      //     target: '_blank',
+      //     text: 'Behance',
+      //     href: '#',
+      //   },
+      // },
+      // {
+      //   icon: 'tabler:brand-pinterest',
+      //   callToAction: {
+      //     target: '_blank',
+      //     text: 'Pinterest',
+      //     href: '#',
+      //   },
+      // },
+    ]}
+  >
+    <Fragment slot="content">
+      <div class="text-base">
+        <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">My journey</h2>
+        <br />
+        <p>
+          I didn’t grow up around computers. My dad passed when I was young. We had no internet, no machine in the
+          house, no “early hacker” origin story.
+          <br />
+          My first login was in 2004 at a internet cafe where the fans were louder than my typing.
+        </p>
+        <br />
+        <p>
+          I still applied to the top three CS programs in Vietnam. I got in. Then I promptly struggled. I couldn’t
+          touch-type. I bombed my first data-structures course lab test even though I aced on the theory part.I spent
+          nights re-learning the basics: pointer diagrams on scrap paper, debugging by printing to stdout because that’s
+          all I knew. Progress looked like this: fewer red errors, more green runs, and a keyboard that finally kept up
+          with my brain.
+        </p>
+        <br />
+        <p>
+          That grind became a habit. Ship before “ready.” Learn by fixing what I just broke. Small wins compounded into
+          bigger ones.
+        </p>
+        <br />
+        <p>
+          Since then I’ve built and led systems used at scale across the U.S., Singapore, Canada, and Europe. Cut
+          latency by double digits. Rebuilt legacy platforms that now serve billions of requests. Took research models
+          to production. Titles didn’t do that—shipping did.
+        </p>
+        <br />
+
+        <p>
+          Now I’m building an AI product on the side for builders like you: multi-model answers with receipts, retrieval
+          that respects data, speed you can feel, costs you can forecast.
+        </p>
+        <br />
+        <p>
+          If that’s your lane—developer, indie maker, analyst, operator—follow along. I share the messy parts, the
+          numbers, and the fixes that stick.
+        </p>
+        <br />
+      </div>
+    </Fragment>
+  </Content>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Layout>
+
+<!-- <Steps
+    id="resume"
+    title="Work experience"
+    items={[
+      {
+        title:
+          'Graphic Designer <br /> <span class="font-normal">ABC Design Studio, New York, NY</span> <br /> <span class="text-sm font-normal">2021 - Present</span>',
+        description: `Collaborate with clients to understand design requirements and objectives. <br /> Develop branding solutions, including logos, color palettes, and brand guidelines. <br /> Design marketing materials such as brochures, posters, and digital assets. <br /> Create visually appealing user interfaces for websites and applications.`,
+        icon: 'tabler:briefcase',
+      },
+      {
+        title:
+          'Junior Graphic Designer <br /> <span class="font-normal">XYZ Creative Agency, Los Angeles, CA</span> <br /> <span class="text-sm font-normal">2018 - 2021</span>',
+        description: `Assisted senior designers in creating design concepts and visual assets. <br /> Contributed to the development of brand identities and marketing collateral. <br /> Collaborated with the marketing team to ensure consistent design across campaigns. <br /> Gained hands-on experience in various design software and tools.`,
+        icon: 'tabler:briefcase',
+      },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+
+  <Steps
+    id="education"
+    title="Education"
+    items={[
+      {
+        title: `Master of Fine Arts in Graphic Design <br /> <span class="font-normal">New York University's School of Design</span> <br /> <span class="text-sm font-normal">2018 - 2020</span>`,
+        icon: 'tabler:school',
+      },
+      {
+        title: `Bachelor of Arts in Graphic Design <br /> <span class="font-normal">New York University's School of Design</span> <br /> <span class="text-sm font-normal">2014 - 2018</span>`,
+        icon: 'tabler:school',
+      },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  /> -->
+
+<style is:global>
+  .about-section .md\:flex {
+    flex-wrap: wrap;
+  }
+
+  .about-section .md\:basis-1\/2 {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+
+  .about-section .text-base {
+    max-width: 62ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .compact-padding.py-12 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  @media (min-width: 768px) {
+    .about-section .text-base {
+      max-width: 65ch;
+    }
+
+    .compact-padding .md\:py-16 {
+      padding-top: 2.5rem !important;
+      padding-bottom: 2.5rem !important;
+    }
+  }
+</style>
