@@ -14,10 +14,7 @@ if (!isEnabled) {
 }
 
 if (!hasAllRequiredFields) {
-  console.warn(
-    '[Giscus] Comments are enabled but missing required configuration fields:',
-    missingFields.join(', ')
-  );
+  console.warn('[Giscus] Comments are enabled but missing required configuration fields:', missingFields.join(', '));
   return;
 }
 
@@ -33,9 +30,12 @@ const host = giscus.host ?? 'https://giscus.app';
 ---
 
 <section class="mt-12 px-6 sm:px-6">
-  <div class="mx-auto max-w-3xl rounded-2xl border border-slate-200/40 bg-white/80 px-4 py-6 shadow-sm dark:border-slate-700/40 dark:bg-slate-900/40">
+  <div
+    class="mx-auto max-w-3xl rounded-2xl border border-slate-200/40 bg-white/80 px-4 py-6 shadow-sm dark:border-slate-700/40 dark:bg-slate-900/40"
+  >
     <script
       src={`${host.replace(/\/$/, '')}/client.js`}
+      is:inline
       data-repo={giscus.repo}
       data-repo-id={giscus.repoId}
       data-category={giscus.category}
@@ -49,8 +49,7 @@ const host = giscus.host ?? 'https://giscus.app';
       data-lang={lang}
       data-loading={loading}
       crossorigin="anonymous"
-      async
-    ></script>
+      async></script>
     <noscript class="text-sm text-muted dark:text-slate-400">
       Comments are powered by Giscus. Enable JavaScript to view them.
     </noscript>

@@ -1,21 +1,17 @@
-MIT License
+Website Content License (Non-Code)
+© 2025 Bob Bui. All rights reserved.
 
-Copyright (c) 2023 onWidget
+Except as permitted by law (including fair use), you may not copy, reproduce, distribute, publicly display, translate, adapt, scrape, text-mine, or create derivative works from any articles, images, or other content on this site without prior written permission.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+You may quote up to 100 words with a clear link back to the source page and attribution to “Bob Bui.” Any other use requires permission. To request permission, contact: bobbui_ at _ outlook.com.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+Nothing here grants any license to use the content. All trademarks belong to their owners.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+Code Snippets
+Unless noted otherwise, code snippets are licensed under the MIT License; include the license and copyright notice in any copies. 
+
+DMCA Notice
+If you believe your copyrighted work appears here without authorization, send a DMCA notice to [DMCA email] with: (1) your signature, (2) the work claimed infringed, (3) the infringing URL(s), (4) your contact info, (5) a good-faith statement, and (6) a statement that the information is accurate and you are authorized, under penalty of perjury. 
+
+
+Note: Before sending any takedown, rights holders must consider fair use. 
