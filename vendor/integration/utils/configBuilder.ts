@@ -36,6 +36,7 @@ export interface AppBlogConfig {
   postsPerPage: number;
   isRelatedPostsEnabled: boolean;
   relatedPostsCount: number;
+  comments?: AppBlogCommentsConfig;
   post: {
     isEnabled: boolean;
     permalink: string;
@@ -67,6 +68,32 @@ export interface AppBlogConfig {
       index: boolean;
       follow: boolean;
     };
+  };
+}
+
+export interface AppBlogCommentsConfig {
+  provider?: 'giscus';
+  isEnabled?: boolean;
+  giscus?: {
+    repo?: string;
+    repoId?: string;
+    category?: string;
+    categoryId?: string;
+    mapping?:
+      | 'pathname'
+      | 'url'
+      | 'title'
+      | 'og:title'
+      | 'number'
+      | 'id';
+    reactionsEnabled?: boolean;
+    emitMetadata?: boolean;
+    inputPosition?: 'top' | 'bottom';
+    theme?: string;
+    lang?: string;
+    loading?: 'lazy' | 'eager';
+    strict?: '0' | '1';
+    host?: string;
   };
 }
 export interface AnalyticsConfig {
@@ -165,6 +192,25 @@ const getAppBlog = (config: Config) => {
       robots: {
         index: false,
         follow: true,
+      },
+    },
+    comments: {
+      provider: 'giscus',
+      isEnabled: false,
+      giscus: {
+        repo: '',
+        repoId: '',
+        category: '',
+        categoryId: '',
+        mapping: 'pathname',
+        reactionsEnabled: true,
+        emitMetadata: false,
+        inputPosition: 'bottom',
+        theme: 'preferred_color_scheme',
+        lang: 'en',
+        loading: 'lazy',
+        strict: '0',
+        host: 'https://giscus.app',
       },
     },
   };

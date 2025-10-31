@@ -32,19 +32,18 @@
 <details open>
 <summary>Table of Contents</summary>
 
-- [Demo](#demo)
-- [Upcoming: AstroWind 2.0 – We Need Your Vision!](#-upcoming-astrowind-20--we-need-your-vision)
-- [TL;DR](#tldr)
-- [Getting started](#getting-started)
-  - [Project structure](#project-structure)
-  - [Commands](#commands)
-  - [Configuration](#configuration)
-  - [Deploy](#deploy)
-- [Frequently Asked Questions](#frequently-asked-questions)
-- [Related Projects](#related-projects)
-- [Contributing](#contributing)
-- [Acknowledgements](#acknowledgements)
-- [License](#license)
+- [🚀 AstroWind](#-astrowind)
+  - [Demo](#demo)
+  - [🔔 Upcoming: AstroWind 2.0 – We Need Your Vision!](#-upcoming-astrowind-20--we-need-your-vision)
+  - [TL;DR](#tldr)
+  - [Getting started](#getting-started)
+    - [Project structure](#project-structure)
+    - [Commands](#commands)
+    - [Configuration](#configuration)
+      - [Customize Design](#customize-design)
+    - [Deploy](#deploy)
+      - [Deploy to production (manual)](#deploy-to-production-manual)
+      - [Deploy to Cloudflare Pages](#deploy-to-cloudflare-pages)
 
 </details>
 
@@ -229,6 +228,22 @@ apps:
     isRelatedPostsEnabled: true # If a widget with related posts is to be displayed below each post
     relatedPostsCount: 4 # Number of related posts to display
 
+    comments:
+      provider: giscus # Currently only Giscus is supported
+      isEnabled: false
+      giscus:
+        repo: '' # e.g. username/your-repo
+        repoId: ''
+        category: ''
+        categoryId: ''
+        mapping: pathname # pathname | url | title | og:title | number | id
+        reactionsEnabled: true
+        emitMetadata: false
+        inputPosition: bottom # top | bottom
+        theme: preferred_color_scheme
+        lang: en
+        loading: lazy # lazy | eager
+
 analytics:
   vendors:
     googleAnalytics:
@@ -237,6 +252,11 @@ analytics:
 ui:
   theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
 ```
+
+To enable comments, fill in the `apps.blog.comments.giscus` values with the details provided by the
+[Giscus setup form](https://giscus.app/) and flip `apps.blog.comments.isEnabled` to `true`. The workflow expects a
+public GitHub repository with discussions enabled. Mapping defaults to `pathname`, but you can adjust it to match your
+routing strategy if needed.
 
 <br>
 
@@ -261,42 +281,17 @@ Now, your website is ready to be deployed. All generated files are located at
 `dist` folder, which you can deploy the folder to any hosting service you
 prefer.
 
-#### Deploy to Netlify
+#### Deploy to Cloudflare Pages
 
-Clone this repository on your own GitHub account and deploy it to Netlify:
+This repository ships with a GitHub Actions workflow (`.github/workflows/actions.yaml`) that can build the site and
+publish it to Cloudflare Pages on every push to the `main` branch. To use it:
 
-[![Netlify Deploy button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/arthelokyo/astrowind)
-
-#### Deploy to Vercel
-
-Clone this repository on your own GitHub account and deploy to Vercel:
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Farthelokyo%2Fastrowind)
-
-<br>
-
-## Frequently Asked Questions
-
-- Why?
--
--
-
-<br>
-
-## Related projects
-
-- [TailNext](https://tailnext.vercel.app/) - Free template using Next.js 14 and Tailwind CSS with the new App Router.
-- [Qwind](https://qwind.pages.dev/) - Free template to make your website using Qwik + Tailwind CSS.
-
-## Contributing
-
-If you have any ideas, suggestions or find any bugs, feel free to open a discussion, an issue or create a pull request.
-That would be very useful for all of us and we would be happy to listen and take action.
-
-## Acknowledgements
-
-Initially created by **Arthelokyo** and maintained by a community of [contributors](https://github.com/arthelokyo/astrowind/graphs/contributors).
-
-## License
-
-**AstroWind** is licensed under the MIT license — see the [LICENSE](./LICENSE.md) file for details.
+1. Create (or reuse) a Cloudflare Pages project and note your **Account ID** and the project name.
+2. From the Cloudflare dashboard, generate an API token using the **Edit Cloudflare Pages** template (requires the
+   `Account > Cloudflare Pages:Edit` permission). Copy the generated token.
+3. Add the following repository secrets in **Settings > Secrets and variables > Actions**:
+   - `CLOUDFLARE_ACCOUNT_ID` &mdash; your Cloudflare account ID.
+   - `CLOUDFLARE_PROJECT_NAME` &mdash; the Pages project name to deploy to.
+   - `CLOUDFLARE_API_TOKEN` &mdash; the token created in step 2.
+4. Push to `main` (or trigger the workflow manually) and GitHub Actions will run `npm run build` and deploy the contents
+   of the `dist/` folder to Cloudflare Pages.

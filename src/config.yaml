@@ -62,6 +62,22 @@ apps:
 
     isRelatedPostsEnabled: true
     relatedPostsCount: 4
+    comments:
+      provider: giscus
+      isEnabled: true
+      giscus:
+        repo: 'bobbui/bobbui.com'
+        repoId: 'R_kgDOQIwA5w'
+        category: 'Announcements'
+        categoryId: 'DIC_kwDOQIwA584CxRcn'
+        mapping: pathname # pathname | url | title | og:title | number | id
+        reactionsEnabled: true
+        emitMetadata: false
+        inputPosition: bottom # top | bottom
+        theme: preferred_color_scheme
+        lang: en
+        loading: lazy # lazy | eager
+        strict: 1
 
 analytics:
   vendors:
