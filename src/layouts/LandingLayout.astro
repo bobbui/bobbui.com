@@ -2,7 +2,7 @@
 import PageLayout from '~/layouts/PageLayout.astro';
 import Header from '~/components/widgets/Header.astro';
 
-import { headerData, footerData } from '~/navigation';
+import { headerData, footerData2 } from '~/navigation';
 import type { MetaData } from '~/types';
 
 export interface Props {
@@ -26,7 +26,7 @@ const { metadata } = Astro.props;
             href: 'https://github.com/arthelokyo/astrowind',
           },
         ]}
-        socialLinks={footerData.socialLinks}
+        socialLinks={footerData2.socialLinks}
         showToggleTheme
         position="right"
       />
