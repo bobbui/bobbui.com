@@ -1,0 +1,123 @@
+---
+publishDate: 2025-11-04T19:00:00Z
+title: "Specialized beats general: Cursor 2.0 shows how to build a moat in agentic coding"
+excerpt: "Wrappers die when platforms change. Cursor 2.0 shows the alternative: own the loop—model + runtime + editor—so speed compounds into defensibility. Here’s the playbook and where wrappers still win."
+image: ~/assets/images/post/specialization-moat-cursor-2-0.png
+category: Product Strategy
+tags: [AI engineering, devtools, agentic coding, moats]
+metadata:
+  canonical: https://yoursite.com/blog/specialization-moat-cursor-2-0
+meta:
+  title: "Specialized beats general: Cursor 2.0’s moat"
+  description: "Wrappers die when platforms change. Cursor 2.0 shows the alternative: own the loop—model + runtime + editor—so speed compounds into defensibility."
+openGraph:
+  title: "Specialized beats general: Cursor 2.0 shows how to build a moat in agentic coding"
+  description: "Wrappers die when platforms change. Cursor 2.0 shows the alternative: own the loop—model + runtime + editor—so speed compounds into defensibility."
+  type: article
+  url: https://yoursite.com/blog/specialization-moat-cursor-2-0
+  images:
+    - url: https://yoursite.com/assets/images/post/specialization-moat-cursor-2-0.png
+      alt: "Three-layer diagram showing model, runtime, and editor with closed feedback arrows"
+twitter:
+  card: summary_large_image
+  title: "Specialized beats general: Cursor 2.0’s moat"
+  description: "Wrappers die when platforms change. Cursor 2.0 shows the alternative: own the loop—model + runtime + editor—so speed compounds into defensibility."
+  images:
+    - https://yoursite.com/assets/images/post/specialization-moat-cursor-2-0.png
+  creator: "@bobbuitech"
+schema:
+  "@context": "https://schema.org"
+  "@type": "Article"
+  headline: "Specialized beats general: Cursor 2.0 shows how to build a moat in agentic coding"
+  datePublished: "2025-11-04T19:00:00Z"
+  dateModified: "2025-11-04T19:00:00Z"
+  author:
+    "@type": "Person"
+    name: "Your Name"
+  publisher:
+    "@type": "Organization"
+    name: "Your Site"
+    logo:
+      "@type": "ImageObject"
+      url: "https://yoursite.com/logo.png"
+---
+
+## The strategic signal in Cursor 2.0
+
+Cursor’s latest release reads like a strategy memo: stop renting the core and **own the loop**. The company shipped a proprietary coding model tightly coupled to its runtime and editor so end-to-end cycle time drops. Their public claim (even though I highly doubt it) is clear enough to measure—**about 4× faster** with **most turns under 30 seconds**—and that’s the point: defensibility shows up first as throughput, not as a feature list. <sup><a href="#ref-5">[5]</a></sup>
+
+## Own the loop: model \+ runtime \+ editor
+
+General models compete on broad capability. Agentic coding competes on **loop time** and **loop quality**:
+
+- **Plan**: break work into tasks.
+- **Write**: produce diffs with context.
+- **Test**: execute, observe, iterate.
+- **Review**: explain changes, surface risks.
+- **Ship**: open PRs, pass CI, merge.
+
+You win by collapsing handoffs. When one vendor owns all three layers, they can optimize **end-to-end loop UX** instead of nudging a rented model via prompt grease. Improvements compound across layers and are hard to copy without runtime or editor control.
+
+## Why now: specialization pressure from both directions
+
+Platforms are making the same move. **OpenAI relaunched Codex in May 2025** as a cloud software-engineering agent powered by coding-specialized **gpt-codex** model, with isolated sandboxes preloaded with your repo, structured test runs, and first-class PR reviews. It even reads an `AGENTS.md` file to guide behavior. That’s a textbook case of **owning the loop** at platform scale—model \+ runtime \+ editor surfaces under one roof. <sup><a href="#ref-1">[1]</a></sup>
+
+If your value is “we use a great model,” you’re racing the platform’s vertical integration. The viable path is **specialize for the job** \(coding, data work, compliance, support\) and **integrate the workflow** so you capture the loop and its telemetry.
+
+## Platform risk is real: learn from the Plugins sunset
+
+We’ve already lived a deprecation cycle. OpenAI ended new **ChatGPT Plugins** conversations on **Mar 19, 2024**, with existing plugin chats cut off on **Apr 9, 2024**. If your product’s critical path depended on the Plugins runtime, you felt it. <sup><a href="#ref-2">[2]</a></sup>
+
+**Recent ways GenAI platforms restrict would-be competitors:**
+
+- **OpenAI Services Agreement** \[effective 2025-05-31\]: forbids using Output to develop AI models that **compete** with OpenAI’s products, with narrow exceptions. Reverse engineering and model extraction are also banned. <sup><a href="#ref-3">[3]</a></sup>
+- **Google Gemini API Additional Terms** \[2025-10-17\]: prohibits using the services to develop **competing models**, and bans attempts to extract or replicate underlying models or weights. <sup><a href="#ref-4">[4]</a></sup>
+
+**Documented enforcement events \(not just policy text\):**
+
+- **Anthropic → OpenAI \(Aug 1, 2025\):** Anthropic **revoked OpenAI’s Claude API access**, citing ToS violations related to model evaluation and competitive use. <sup><a href="#ref-6">[6]</a>, <a href="#ref-7">[7]</a></sup>
+- **Anthropic → Windsurf \(June 2025\):** Anthropic **cut Windsurf’s direct access** to Claude 3.x amid reports that OpenAI was in acquisition talks with the coding startup; leadership later confirmed the rationale. <sup><a href="#ref-8">[8]</a></sup>
+- **Midjourney \(ongoing\):** Explicit **bans on automation and third-party wrappers** are enforced via account blocks, limiting wrapper-style products from scaling on top of the service. <sup><a href="#ref-9">[9]</a></sup>
+- **About OpenAI vs. DeepSeek:** There’s **no confirmed public case** of OpenAI directly “blocking DeepSeek” at the API level as of Nov 4, 2025. What is documented: OpenAI publicly **questioned DeepSeek’s training provenance** and urged policymakers to consider **bans on PRC-affiliated models**, while **regulators and app stores** in multiple countries restricted DeepSeek distribution. <sup><a href="#ref-10">[10]</a>, <a href="#ref-11">[11]</a>, <a href="#ref-12">[12]</a></sup>
+
+The lesson: if a platform owner can remove oxygen to protect its roadmap, it eventually will. If your product breaks when a single vendor flips a switch, you built a feature flag, not a business.
+
+## Where wrappers still win
+
+Wrappers aren’t dead. They just need **narrow moats**.
+
+1. **Regulatory surface**: domains with non-negotiable controls, audit trails, and deterministic tooling—think **SOX/SOC-heavy** workflows—where your compliance layer is the product.  
+2. **Data gravity**: sit next to the data with stable access patterns—air-gapped, on-prem, or inside a **VPC runtime** competitors can’t reach.  
+3. **Proprietary evaluators**: private test suites, linters, and checkers that decide “good enough to ship,” not just “passes unit tests.”  
+4. **Distribution lock**: you already own the daily surface—e.g., the **ticketing system**, the **code review tool**, or the **terminal**—so you can steer users into your loop.  
+5. **Vertical workflows**: narrow industries where domain tools and schemas are stable and you can harden a small set of actions with deterministic adapters.  
+6. **Cost arbitrage**: sustained unit-economics edge via routing, caching, or distillation that competitors can’t reproduce without your traffic profile.
+
+A smell test: if your differentiator reads “better prompt and nicer UI,” you’re one platform change away from churn. If it reads “own the action, the test, and the approval,” you have a shot.
+
+## Key takeaways
+
+- **Specialize for the job.** Agentic coding rewards loop ownership.  
+- **Integrate the workflow.** Model alone isn’t enough; runtime and editor decide UX and trust.  
+- **Reduce platform exposure.** The Plugins sunset showed how fast access can change.  
+- **Measure throughput, not just IQ.** Sub-30s turns and deterministic tools beat a clever model that waits.  
+- **Wrappers can still win.** Focus on compliance, data gravity, private evaluators, verticals, and distribution.
+
+—
+
+What’s one wrapper you’ve seen **survive** a platform change, and why did it hold up? **Follow on LinkedIn or X** for the best replies and future deep dives.
+
+## References
+
+[1] <a id="ref-1" target="blank" href="https://openai.com/index/introducing-codex/">OpenAI — Introducing Codex \[research preview; codex-1; sandboxes; AGENTS.md\]</a><br />
+[2] <a id="ref-2" target="blank" href="https://help.zapier.com/hc/en-us/articles/24785309335565-Sunsetting-the-Zapier-ChatGPT-plugin-what-you-need-to-know">Zapier — Sunsetting the ChatGPT Plugin \[dates: Mar 19 and Apr 9, 2024\]</a><br />
+[3] <a id="ref-3" target="blank" href="https://openai.com/policies/services-agreement/">OpenAI — Services Agreement \[effective 2025-05-31\]</a><br />
+[4] <a id="ref-4" target="blank" href="https://ai.google.dev/gemini-api/terms">Google — Gemini API Additional Terms \[updated 2025-10-17\]</a><br />
+[5] <a id="ref-5" target="blank" href="https://cursor.com/blog/2-0">Cursor — Introducing Cursor 2.0 and Composer</a><br />
+[6] <a id="ref-6" target="blank" href="https://www.wired.com/story/anthropic-revokes-openais-access-to-claude/">WIRED — Anthropic revokes OpenAI’s Claude API access \[2025-08-01\]</a><br />
+[7] <a id="ref-7" target="blank" href="https://techcrunch.com/2025/08/02/anthropic-cuts-off-openais-access-to-its-claude-models/">TechCrunch — Anthropic cuts off OpenAI’s access to Claude models \[2025-08-02\]</a><br />
+[8] <a id="ref-8" target="blank" href="https://techcrunch.com/2025/06/05/anthropic-co-founder-on-cutting-access-to-windsurf-it-would-be-odd-for-us-to-sell-claude-to-openai/">TechCrunch — Anthropic co-founder on cutting Windsurf access \[2025-06-05\]</a><br />
+[9] <a id="ref-9" target="blank" href="https://docs.midjourney.com/hc/en-us/articles/32013696484109-Community-Guidelines">Midjourney — Community Guidelines \[automation and third-party apps policy\]</a><br />
+[10] <a id="ref-10" target="blank" href="https://www.theguardian.com/technology/2025/jan/29/openai-chatgpt-deepseek-china-us-ai-models">The Guardian — OpenAI ‘reviewing’ allegations DeepSeek used its models \[2025-01-29\]</a><br />
+[11] <a id="ref-11" target="blank" href="https://www.reuters.com/technology/artificial-intelligence/italys-privacy-watchdog-blocks-chinese-ai-app-deepseek-2025-01-30/">Reuters — Italy regulator blocks DeepSeek app \[2025-01-30\]</a><br />
+[12] <a id="ref-12" target="blank" href="https://apnews.com/article/20950f357276b9bb8f2a70a4b3c03e96">AP — Downloads of DeepSeek’s apps paused in South Korea \[2025-02-17\]</a>
