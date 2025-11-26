@@ -10,8 +10,8 @@ site:
 metadata:
   title:
     default: Bob Bui
-    template: '%s — Bob Bui'
-  description: "\U0001F680 Bob Bui's personal website and blog about web development, programming, and technology."
+    template: '%s - Bob Bui'
+  description: 'Personal blog of principal software architect Bob Bui, sharing sharp, no-fluff insights on AI, web development, and building real-world software products.'
   robots:
     index: true
     follow: true
