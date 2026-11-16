@@ -18,7 +18,7 @@ jobs:
       - name: Sync to GitLab
         # Action: https://github.com/marketplace/actions/sync-to-gitlab
         # Implementation source: https://github.com/kujov/gitlab-sync
-        uses: keninkujovic/gitlab-sync@2.1.0
+        uses: kujov/gitlab-sync@2255578444d23f254d08592bb8434084d29474d5 # 2.1.0
         with:
           gitlab_url: ${{ secrets.GITLAB_URL }} # e.g. https://gitlab.com/yourusername/yourrepo.git
           username: ${{ secrets.GITLAB_USERNAME }} # GitLab username
